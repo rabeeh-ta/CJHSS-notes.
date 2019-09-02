@@ -1,47 +1,26 @@
 body {
   font-family: sans-serif;
   background-color: #f4f2f0;
-  
 }
 
-.myNavbar{
-
-  background-color:#264f75;
-  
-
-
-}
-.mytextnav{
-  color:white;
-  
-
+.myNavbar {
+  background-color: #264f75;
 }
 
-
-
-.myContainer{
-
-    padding:15px;
-
-
+.mytextnav {
+  color: white;
 }
 
+.myContainer {
+  padding: 15px;
+}
 
 .footerDiv {
-
-  padding-top:15px;
-  padding-left:42%;
-
+  padding-top: 15px;
+  padding-left: 42%;
 }
-
-
 
 .footerlink a:hover {
-
-  
-   color: gray;
-   text-decoration:none;
-
-
+  color: gray;
+  text-decoration: none;
 }
-

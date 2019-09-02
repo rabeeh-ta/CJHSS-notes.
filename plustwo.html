@@ -47,32 +47,41 @@
 <body>
   <!--nav bar-->
   <nav class="myNavbar navbar  ">
-    <span class="mytextnav navbar-brand mb-0 h1">Notes and References</span>
+    <span class="mytextnav navbar-brand mb-0 h1">Notes For +2</span>
   </nav>
 
-  <div class="myContainer accordion" id="accordionExample">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#" aria-expanded="true"
-            aria-controls="collapseOne">
-            <a href="./plusone.html">Plus One</a>
-          </button>
-        </h2>
-      </div>
-    </div>
+  <!--main container-->
+  <div class="myContainer container-fluid">
+    <div class="accordion" id="accordionExample">
 
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#"
-            aria-expanded="false" aria-controls="collapseTwo">
-            <a href="./plustwo.html">Plus Two</a>
-          </button>
-        </h2>
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="false" aria-controls="collapseOne">
+              English
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>
+              <li>
+                Unit 1 summary
+                <a href="./PDF/english_summary_unit 1.pdf">
+                  <i class="fas fa-file-download">PDF download</i>
+                </a>
+              </li>
+            </p>
+          </div>
+        </div>
       </div>
+
+
     </div>
   </div>
+
   <!--footer-->
 
   <nav class="myNavbar fixed-bottom  navbar navbar-light ">
