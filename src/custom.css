@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
   background-color: #f4f2f0;
+<<<<<<< HEAD
 }
 
 .myNavbar {
@@ -24,3 +25,49 @@ body {
   color: gray;
   text-decoration: none;
 }
+=======
+  
+}
+
+.myNavbar{
+
+  background-color:#264f75;
+  
+
+
+}
+.mytextnav{
+  color:white;
+  
+
+}
+
+
+
+.myContainer{
+
+    padding:15px;
+
+
+}
+
+
+.footerDiv {
+
+  padding-top:15px;
+  padding-left:42%;
+
+}
+
+
+
+.footerlink a:hover {
+
+  
+   color: gray;
+   text-decoration:none;
+
+
+}
+
+>>>>>>> bfde7b54eb0764a0b760ecacbb17f1f9abf5365d
