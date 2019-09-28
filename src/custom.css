@@ -1,7 +1,6 @@
 body {
   font-family: sans-serif;
   background-color: #f4f2f0;
-<<<<<<< HEAD
 }
 
 .myNavbar {
@@ -16,6 +15,7 @@ body {
   padding: 15px;
 }
 
+
 .footerDiv {
   padding-top: 15px;
   padding-left: 42%;
@@ -25,49 +25,32 @@ body {
   color: gray;
   text-decoration: none;
 }
-=======
-  
+
+#add-div {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
 }
 
-.myNavbar{
-
-  background-color:#264f75;
-  
-
-
-}
-.mytextnav{
-  color:white;
-  
-
+.add-button {
+  background-color: #315b96;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 30px;
+  border-color: #264f75;
 }
 
-
-
-.myContainer{
-
-    padding:15px;
-
+.margin-top {
+  margin-top: 4%;
 
 }
 
-
-.footerDiv {
-
-  padding-top:15px;
-  padding-left:42%;
-
+.link-text {
+  color: white;
+  text-decoration: none;
 }
 
-
-
-.footerlink a:hover {
-
-  
-   color: gray;
-   text-decoration:none;
-
-
+.link-text a:hover {
+  color: gray;
+  text-decoration: none;
 }
-
->>>>>>> bfde7b54eb0764a0b760ecacbb17f1f9abf5365d
