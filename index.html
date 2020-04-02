@@ -31,54 +31,47 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-  <!--Awesome fonts-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/solid.css"
-    integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/regular.css"
-    integrity="sha384-IG162Tfx2WTn//TRUi9ahZHsz47lNKzYOp0b6Vv8qltVlPkub2yj9TVwzNck6GEF" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/brands.css"
-    integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/fontawesome.css"
-    integrity="sha384-4aon80D8ZkBMkJJZmsuVvEZhm25VyJZYDtyEmjtB6MSACCPSEWY5+o1pqoyK04h+" crossorigin="anonymous" />
+  <!-- google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2|Roboto+Mono&display=swap" rel="stylesheet">
 
   <!--custom css-->
-  <link href="./src/custom.css" rel="stylesheet" />
+  <link href="./public/custom.css" rel="stylesheet" />
 
   <title>CJ Notes</title>
 </head>
 
 <body>
   <!--nav bar-->
-  <nav class="myNavbar navbar  ">
+  <nav class="myNavbar navbar ">
     <span class="mytextnav navbar-brand mb-0 h1">Notes and References</span>
   </nav>
 
   <div class="myContainer accordion" id="accordionExample">
     <div class="card">
       <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
+        <h1 class="mb-0">
           <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#" aria-expanded="true"
             aria-controls="collapseOne">
-            <a href="./plusone.html">Plus One</a>
+            <a class="font_size" href="./public/plusone.html">Plus One</a>
           </button>
-        </h2>
+        </h1>
       </div>
     </div>
 
     <div class="card">
       <div class="card-header" id="headingTwo">
-        <h2 class="mb-0">
+        <h1 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#"
             aria-expanded="false" aria-controls="collapseTwo">
-            <a href="./plustwo.html">Plus Two</a>
+            <a class="font_size" href="./public/plustwo.html">Plus Two</a>
           </button>
-        </h2>
+        </h1>
       </div>
     </div>
   </div>
 
   <div id="add-div">
-    <a class="link-text" href="./src/addfiles.html"><button class="add-button ">Add Files</button></a>
+    <a class="link-text" href="./public/addfiles.html"><button class="add-button "> Contribute</button></a>
   </div>
 
   <!--footer-->
@@ -87,7 +80,7 @@
     <div class="mytextnav footerDiv  col">
       <p class="footerlink">
         <a class="mytextnav" href="https://github.com/rabeeh-ta/CJHSS-notes.">
-          ❤️ Source Code</a>
+          ❤️ Source</a>
       </p>
     </div>
   </nav>
@@ -95,25 +88,14 @@
   <!--Bootstrap CDN -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    </script>
 
-  <!--Awesome fonts CDN-->
-  <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/solid.js"
-    integrity="sha384-6FXzJ8R8IC4v/SXgi164MCGG3u5RKXaBGVBabmxQTVRAAVE5w5/wGthflEOX8hjL" crossorigin="anonymous">
-  </script>
-  <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/regular.js"
-    integrity="sha384-Gxfqh68NuE4s0o2renzieYkDYVbdJynynsdrB7UG9yEvgpS9TVM+c4bknWfQXUBg" crossorigin="anonymous">
-  </script>
-  <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/brands.js"
-    integrity="sha384-zJ8/qgGmKwL+kr/xmGA6s1oXK63ah5/1rHuILmZ44sO2Bbq1V3p3eRTkuGcivyhD" crossorigin="anonymous">
-  </script>
-  <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/fontawesome.js"
-    integrity="sha384-Qmms7kHsbqYnKkSwiePYzreT+ufFVSNBhfLOEp0sEEfEVdORDs/aEnGaJy/l4eoy" crossorigin="anonymous">
-  </script>
 </body>
+
+</html>

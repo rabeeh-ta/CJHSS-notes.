@@ -1,0 +1,83 @@
+body {
+  font-family: sans-serif;
+  background-color: #f4f2f0;
+  font-family: 'Baloo Da 2', cursive;
+}
+
+.myNavbar {
+  background-color: #1b262c;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.myNavbar span {
+  padding-left: 5%;
+}
+
+.mytextnav {
+  color: white;
+}
+
+.myContainer {
+  padding: 15px;
+}
+
+.footerDiv {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.font_size {
+  font-size: 20px;
+}
+
+.footerlink a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+#add-div {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+}
+
+.add-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  line-height: px;
+
+  border-radius: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+  background: rgba(58, 133, 191, 0.75);
+  border: 2px solid rgb(27, 38, 44);
+}
+
+.margin-top {
+  margin-top: 4%;
+}
+
+.link-text {
+  color: white;
+  text-decoration: none;
+}
+
+.link-text a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #e9ecef;
+  border-radius: 50px;
+}
+
+#myBar {
+  width: 0%;
+  height: 20px;
+  background-color: #17a2b8;
+  border-radius: 50px;
+}

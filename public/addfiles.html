@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- manifest webmanifest-->
+  <link rel="manifest" href="./manifest.webmanifest">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135551870-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-135551870-1");
+  </script>
+
+
+  <!--icon for the tittie-->
+
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+  <!--Bootstrap CDN-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <!-- google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2|Roboto+Mono&display=swap" rel="stylesheet">
+
+  <!--custom css-->
+  <link href="custom.css" rel="stylesheet" />
+
+  <title>CJ Notes</title>
+</head>
+
+<body>
+  <!--nav bar-->
+  <nav class="myNavbar navbar  ">
+    <span class="mytextnav navbar-brand mb-0 h1">Submit Resources</span>
+    <a class="btn btn-light" href="../index.html" role="button">Back</a>
+  </nav>
+
+  <div class="container-fluid margin-top">
+
+    <div class="form-group">
+      <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+    </div>
+
+    <div class="form-group form-check">
+      <input id="upload_select" type="file">
+    </div>
+
+    <div class="alert alert-success" role="alert">
+      The file will get uploaded once you have selected it.
+      <b>Make sure that the file is named appropriately, by the contents inside (Notes, Question Papers, Answer Keys
+        etc). </b>
+    </div>
+
+  </div>
+
+
+
+
+  <!--footer-->
+
+  <nav class="myNavbar fixed-bottom  navbar navbar-light ">
+    <div class="mytextnav footerDiv  col">
+      <p class="footerlink">
+        <a class="mytextnav" href="https://github.com/rabeeh-ta/CJHSS-notes.">
+          ❤️ Source</a>
+      </p>
+    </div>
+  </nav>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBeeQognGqBhvGiZy0PvZdkhv7dgUigWVI",
+      authDomain: "notes-for-cj.firebaseapp.com",
+      databaseURL: "https://notes-for-cj.firebaseio.com",
+      projectId: "notes-for-cj",
+      storageBucket: "notes-for-cj.appspot.com",
+      messagingSenderId: "915213015662",
+      appId: "1:915213015662:web:35e03bbbcecd56ca38a47f",
+      measurementId: "G-WKRFBRQ0PG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // dom elements
+    let upload_bar = document.getElementById("upload_bar");
+    let upload_select = document.getElementById("upload_select");
+    let elem = document.getElementById("myBar");
+
+    // firebase referece/
+
+    //listening to the file selected
+    upload_select.addEventListener("change", function (e) {
+
+      // getting file
+      let file = e.target.files[0];
+
+      console.log(file);
+
+      // firebase storage reference
+      let storageRef = firebase.storage().ref('/inbox/' + file.name);
+
+      // uploading the file
+      let task = storageRef.put(file);
+
+      //upload progress bar
+      task.on('state_changed',
+        function progress(snapshot) {
+          let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log(percentage);
+          elem.style.width = percentage + '%';
+        },
+        function error(err) {
+          console.log('error', err);
+        },
+        function complete() {
+
+        });
+
+
+    });
+
+
+  </script>
+
+  <!--Bootstrap CDN -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+
+</body>
+
+</html>
