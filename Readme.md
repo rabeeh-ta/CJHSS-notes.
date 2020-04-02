@@ -14,13 +14,14 @@ Adding more resources is our main goal here. so feel free to drop something.
 ### Technology used for building.
 
 * [Bootstrap](https://bootstrap.com/) - used to build the site.
+* [Firebase](https://firebase.com/) - used to for storage.
 * [Netlify](https://netlify.com/) - used for hosting the site.
 * [Freenom](https://freenom.com/) - for free domain.
 
 ## Features to add.
 
 - [x] Responsive Design.
-- [ ] Accepting Files from the site.
+- [x] Accepting Files from the site.
 - [ ] PWA Support.
 
 ## License.
