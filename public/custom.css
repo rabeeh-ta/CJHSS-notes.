@@ -5,6 +5,7 @@ body {
 }
 
 .myNavbar {
+  height: 9vh;
   background-color: #1b262c;
   font-family: 'Roboto Mono', monospace;
 }
@@ -18,6 +19,7 @@ body {
 }
 
 .myContainer {
+  min-height: 82vh;
   padding: 15px;
 }
 
@@ -41,7 +43,7 @@ body {
   right: 25px;
 }
 
-.add-button {
+.add_button {
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -55,16 +57,16 @@ body {
   border: 2px solid rgb(27, 38, 44);
 }
 
-.margin-top {
+.margin_top {
   margin-top: 4%;
 }
 
-.link-text {
+.list_text {
   color: white;
   text-decoration: none;
 }
 
-.link-text a:hover {
+.list_text a:hover {
   color: gray;
   text-decoration: none;
 }
