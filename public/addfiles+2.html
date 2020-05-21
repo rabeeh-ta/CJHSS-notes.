@@ -59,7 +59,7 @@
       <input id="upload_select" type="file" accept="application/pdf">
     </div>
 
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success imp-text" role="alert">
       The file will get uploaded once you have selected it.
       <b>Make sure that the file ARE FOR +2 BATCHES, And are PDFs, named appropriately by the contents inside
         them(Notes, Question Papers, Answer Keys
@@ -85,18 +85,10 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+  <!--Firebase configuration-->
+  <script src="../auth/firebase_auth.js"></script>
   <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyBeeQognGqBhvGiZy0PvZdkhv7dgUigWVI",
-      authDomain: "notes-for-cj.firebaseapp.com",
-      databaseURL: "https://notes-for-cj.firebaseio.com",
-      projectId: "notes-for-cj",
-      storageBucket: "notes-for-cj.appspot.com",
-      messagingSenderId: "915213015662",
-      appId: "1:915213015662:web:35e03bbbcecd56ca38a47f",
-      measurementId: "G-WKRFBRQ0PG"
-    };
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 

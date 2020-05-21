@@ -56,7 +56,7 @@
     </ul>
 
     <div id="add-div">
-      <a class="list_text" href="./addfiles+2.html"><button class="add_button "> Contribute</button></a>
+      <a class="list_text" href="./addfiles+2.html"><button class="main-button "> Contribute</button></a>
     </div>
   </div>
 
@@ -76,18 +76,10 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+  <!--Firebase configuration-->
+  <script src="../auth/firebase_auth.js"></script>
   <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyBeeQognGqBhvGiZy0PvZdkhv7dgUigWVI",
-      authDomain: "notes-for-cj.firebaseapp.com",
-      databaseURL: "https://notes-for-cj.firebaseio.com",
-      projectId: "notes-for-cj",
-      storageBucket: "notes-for-cj.appspot.com",
-      messagingSenderId: "915213015662",
-      appId: "1:915213015662:web:35e03bbbcecd56ca38a47f",
-      measurementId: "G-WKRFBRQ0PG"
-    };
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
@@ -110,7 +102,7 @@
             //let list_li = `<li class="list-group-item text-center"><a href="${url}">${obj.name}</a></li>`;
 
             let list_li = document.createElement('li');
-            list_li.className = 'list-group-item text-center';
+            list_li.className = 'list-group-item text-center render-list';
             list_section.appendChild(list_li);
             let list_a = document.createElement('a');
             list_a.href = url;

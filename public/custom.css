@@ -10,6 +10,10 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
+.delete-button a {
+  color: white;
+  font-weight: bold;
+}
 .myNavbar span {
   padding-left: 5%;
 }
@@ -37,24 +41,35 @@ body {
   text-decoration: none;
 }
 
+.imp-text {
+  text-align: center;
+}
+
 #add-div {
   position: fixed;
   bottom: 100px;
   right: 25px;
 }
 
-.add_button {
-  font-size: 20px;
+.main-button {
+  font-size: 18px;
   font-weight: bold;
-  color: white;
-  letter-spacing: 1px;
-  line-height: px;
-
-  border-radius: 40px;
-  background: transparent;
-  transition: all 0.3s ease 0s;
-  background: rgba(58, 133, 191, 0.75);
-  border: 2px solid rgb(27, 38, 44);
+  background: #5d8ffc;
+  color: #fff;
+  border: 1px solid #5d8ffc;
+  border-radius: 5px;
+  padding: 5px;
+  display: block;
+  width: 100px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+.main-button:hover {
+  background: #fff;
+  color: #5d8ffc;
+  border: 1px solid #5d8ffc;
+  cursor: pointer;
 }
 
 .margin_top {
@@ -82,4 +97,71 @@ body {
   height: 20px;
   background-color: #17a2b8;
   border-radius: 50px;
+}
+#loaded-files {
+  display: none;
+}
+
+input,
+button {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.main-div,
+.loggedin-div {
+  width: 80%;
+  height: 75vh;
+  margin: 0px auto;
+  margin-top: 150px;
+  padding: 20px;
+}
+
+.main-div input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div input:focus {
+  border: 1px solid #777;
+}
+
+.main-div button,
+.loggedin-div button {
+  background: #5d8ffc;
+  color: #fff;
+  border: 1px solid #5d8ffc;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div button:hover,
+.loggedin-div button:hover {
+  background: #fff;
+  color: #5d8ffc;
+  border: 1px solid #5d8ffc;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+
+  .render-list {
+    margin: 0 15% 0 15%;
+    font-size: larger;
+  }
 }

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- manifest webmanifest-->
+    <link rel="manifest" href="./manifest.webmanifest">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135551870-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "UA-135551870-1");
+    </script>
+
+
+    <!--icon for the tittie-->
+
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2|Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!--custom css-->
+    <link href="./public/custom.css" rel="stylesheet" />
+
+    <title>CJ Notes</title>
+</head>
+
+<body>
+    <!--nav bar-->
+    <nav class="myNavbar navbar ">
+        <span class="mytextnav navbar-brand mb-0 h1">Remove Files</span>
+        <a class="btn btn-light" href="./index.html" role="button">Back</a>
+    </nav>
+
+    <div id="login_div" class="main-div">
+        <h3>You have to login for managing files. 😉</h3>
+        <input type="email" placeholder="Email..." id="email_field" />
+        <input type="password" placeholder="Password..." id="password_field" />
+
+        <button onclick="login()">Login to Account</button>
+    </div>
+
+    <container id="loaded-files">
+        <div class="myContainer container-fluid">
+            <div class="alert alert-danger imp-text" role="alert">
+                The files that are removed will be DELETED permanently.
+            </div>
+
+            <ul id="list-section" class="list-group list_container list-group-flush">
+            </ul>
+        </div>
+        <div id="add-div">
+            <button class="main-button" onclick="logout()"> LogOut</button>
+        </div>
+    </container>
+
+
+
+    <!--footer-->
+
+    <nav class="myNavbar  navbar navbar-light ">
+        <div class="mytextnav footerDiv  col">
+            <p class="footerlink">
+                <a class="mytextnav" href="https://github.com/rabeeh-ta/CJHSS-notes.">
+                    ❤️ Source</a>
+            </p>
+        </div>
+    </nav>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <!--Firebase configuration-->
+    <script src="./auth/firebase_auth.js"></script>
+    <script>
+
+        /*
+                i am pretty sure my code is trash, please don't judge :)
+        */
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        //DOM elements
+        let list_section = document.getElementById('list-section');
+
+
+        // we'll create a Reference to that folder:
+        let rootRef = firebase.storage().ref();
+        let plusOneRef = firebase.storage().ref("plus_one/");
+        let plusTwoRef = firebase.storage().ref("plus_two/");
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+
+                document.getElementById("loaded-files").style.display = "block";
+                document.getElementById("login_div").style.display = "none";
+
+                var user = firebase.auth().currentUser;
+
+                if (user != null) {
+
+                    // Now we get the references of these images
+                    plusOneRef.listAll().then(function (result) {
+                        result.items.forEach(function (imageRef) {
+
+                            let obj = Object.create(imageRef);
+
+                            function displayImage(imageRef) {
+                                imageRef.getDownloadURL().then(function (url) {
+                                    //console.log(obj.name, url);
+
+                                    let list_li = document.createElement('li');
+                                    list_li.className = 'list-group-item text-center render-list';
+                                    list_section.appendChild(list_li);
+                                    let list_a = document.createElement('a');
+                                    list_a.href = url;
+                                    list_a.innerHTML = obj.name;
+                                    list_li.appendChild(list_a);
+                                    let list_br = document.createElement('br');
+                                    list_li.appendChild(list_br);
+                                    let list_button = document.createElement('button');
+                                    list_button.className = 'btn btn-danger delete-button';
+                                    list_button.id = obj.fullPath;
+                                    let button_a = document.createElement('a');
+                                    button_a.innerHTML = 'Remove';
+
+                                    button_a.addEventListener('click', function () {
+                                        var desertRef = rootRef.child(obj.fullPath);
+                                        console.log(desertRef.fullPath);
+                                        // Delete the file
+                                        desertRef.delete().then(function () {
+                                            location.reload();
+                                        }).catch(function (error) {
+                                            console.log(error);
+                                        });
+                                    });
+                                    list_button.appendChild(button_a);
+                                    list_li.appendChild(list_button);
+
+
+                                }).catch(function (error) {
+                                    console.log(error);
+                                });
+                            }
+
+                            displayImage(imageRef);
+                        });
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+
+                    // displaying files for plustwo
+                    plusTwoRef.listAll().then(function (result) {
+                        result.items.forEach(function (imageRef) {
+
+                            let obj = Object.create(imageRef);
+
+                            function displayImage(imageRef) {
+                                imageRef.getDownloadURL().then(function (url) {
+                                    //console.log(obj.name, url);
+
+                                    let list_li = document.createElement('li');
+                                    list_li.className = 'list-group-item text-center render-list';
+                                    list_section.appendChild(list_li);
+                                    let list_a = document.createElement('a');
+                                    list_a.href = url;
+                                    list_a.innerHTML = obj.name;
+                                    list_li.appendChild(list_a);
+                                    let list_br = document.createElement('br');
+                                    list_li.appendChild(list_br);
+                                    let list_button = document.createElement('button');
+                                    list_button.className = 'btn btn-danger delete-button';
+                                    list_button.id = obj.fullPath;
+                                    let button_a = document.createElement('a');
+                                    button_a.innerHTML = 'Remove';
+
+                                    button_a.addEventListener('click', function () {
+                                        var desertRef = rootRef.child(obj.fullPath);
+                                        //console.log(desertRef.fullPath);
+                                        // Delete the file
+                                        desertRef.delete().then(function () {
+                                            location.reload();
+                                        }).catch(function (error) {
+                                            console.log(error);
+                                        });
+                                    });
+                                    list_button.appendChild(button_a);
+                                    list_li.appendChild(list_button);
+
+
+                                }).catch(function (error) {
+                                    console.log(error);
+                                });
+                            }
+
+                            displayImage(imageRef);
+                        });
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+
+                }
+
+            } else {
+                // No user is signed in.
+
+                document.getElementById("loaded-files").style.display = "none";
+                document.getElementById("login_div").style.display = "block";
+
+            }
+        });
+
+        function login() {
+
+            var userEmail = document.getElementById("email_field").value;
+            var userPass = document.getElementById("password_field").value;
+
+            firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+                window.alert("Error : " + errorMessage);
+
+                // ...
+            });
+
+        }
+
+        function logout() {
+            firebase.auth().signOut();
+        }
+
+
+
+
+
+    </script>
+
+    <!--Bootstrap CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+</body>
+
+</html>
