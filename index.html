@@ -25,7 +25,11 @@
 
   <!--icon for the tittie-->
 
-  <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="./images/icons/icon-96x96.png" />
+
+  <!--manifest-->
+  <link rel="manifest" href="./manifest.webmanifest">
+
 
   <!--Bootstrap CDN-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -85,6 +89,18 @@
       </p>
     </div>
   </nav>
+
+  <script>
+    // Make sure sw are supported
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('./sw.js')
+          .then(reg => console.log('Service Worker: Registered (Pages)'))
+          .catch(err => console.log(`Service Worker: Error: ${err}`));
+      });
+    }
+  </script>
 
   <!--Bootstrap CDN -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

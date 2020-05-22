@@ -89,7 +89,7 @@
     // we'll create a Reference to that folder:
     let storageRef = firebase.storage().ref("plus_two/");
 
-    // Now we get the references of these images
+    // Now we list all the files from firebase
     storageRef.listAll().then(function (result) {
       result.items.forEach(function (imageRef) {
 
@@ -99,8 +99,7 @@
           imageRef.getDownloadURL().then(function (url) {
             //console.log(obj.name, url);
 
-            //let list_li = `<li class="list-group-item text-center"><a href="${url}">${obj.name}</a></li>`;
-
+            // creating the UI on the fly
             let list_li = document.createElement('li');
             list_li.className = 'list-group-item text-center render-list';
             list_section.appendChild(list_li);
