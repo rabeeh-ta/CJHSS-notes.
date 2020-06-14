@@ -22,7 +22,7 @@ Adding more resources is our main goal here. so feel free to drop something.
 - [x] Responsive Design.
 - [x] Accepting Files from the site.
 - [x] Admin section, with login.
-- [ ] PWA Support.
+- [x] PWA Support.
 
 ## License.
 
