@@ -1,4 +1,4 @@
-### [website](https://notesforcj.netlify.app/)
+### [website-live](https://notesforcj.netlify.app/)
 # CJHSS notes.
 
 Chemnad Jama-ath Heigher Secondary School Notes notes is a place where you can find all **reference, sample question papers and also short notes** for almost all the subjects.
